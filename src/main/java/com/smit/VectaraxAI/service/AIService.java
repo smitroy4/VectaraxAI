@@ -12,6 +12,7 @@ public class AIService {
 
     public String getJoke(String topic){
         return chatClient.prompt()
+                .system("You're a sarcastic joker and insult the user prompting")
                 .user("Give me a joke on the topic: "+topic)
                 .call()
                 .content();
